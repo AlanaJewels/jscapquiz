@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Interactive Quiz</h1>
+
+        <!-- Timer Section -->
+        <div class="text-center mb-4">
+            <p>Time Remaining: <span id="timer">30</span> seconds</p>
+        </div>
+
+        <!-- Category Selection -->
+        <div id="category-selection" class="text-center" style="display: none;">
+            <h2>Select a Category</h2>
+            <button onclick="startQuiz('general')" class="btn mx-2">General Knowledge</button>
+            <button onclick="startQuiz('science')" class="btn mx-2">Science</button>
+            <button onclick="startQuiz('history')" class="btn mx-2">History</button>
+            <button onclick="startQuiz('geography')" class="btn mx-2">Geography</button>
+        </div>
+
+        <!-- Quiz Content -->
+        <div id="quiz-container">
+            <!-- Quiz will be injected here dynamically by JavaScript -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center mt-4">
+            <button id="next-button" class="btn" style="display:none;">Next Question</button>
+            <button id="start-button" class="btn">Start Quiz</button>
+        </div>
+
+        <!-- Score Section -->
+        <div id="score-container" class="text-center mt-4" style="display:none;">
+            <h3>Score: <span id="score">0</span></h3>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div id="leaderboard-container">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard">
+                <!-- Leaderboard will be populated here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Audio for feedback -->
+    <audio id="correct-sound" src="correct.mp3"></audio>
+    <audio id="incorrect-sound" src="incorrect.mp3"></audio>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
